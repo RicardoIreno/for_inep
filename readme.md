@@ -78,17 +78,13 @@ Exemplos:
 
  O comentário do commit no GIT deve descrever, com clareza, o que a sua atualização faz. Exemplos:
 
-```
-"Adiciona extracao_dados_censo_2024_12.py"
-```
 
-```
-"Altera a função convert_number em extracao_dados_censo_2024_12.py"
-```
+> "Adiciona extracao_dados_censo_2024_12.py"
 
-```
-"Renomeia a variável ABC para YZX"
-```
+> "Altera a função convert_number em extracao_dados_censo_2024_12.py"
+
+> "Renomeia a variável ABC para YZX"
+
 
 O comando completo é:
 ```
