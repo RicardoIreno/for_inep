@@ -48,6 +48,8 @@ git pull origin dev
 
 Estrutura de diretórios adotado para o projeto
 
+
+```
 /_work/
     ├── /docs/
     ├── /scripts_pentaho/      
@@ -55,6 +57,7 @@ Estrutura de diretórios adotado para o projeto
     ├── /scripts_r/
     ├── /scripts_sql/                     
     └── readme.md
+```
 
 Como cada usuário irá criar sua própria cópia do repositório principal, haverão múltiplas cópias dos mesmos arquivos no computador, é assim que deve ser. Por isso, deve-se prestar atenção em trabalhar com os arquivos corretos, ou seja, os que estão na sua pasta work do seu desktop. Procurar arquivos através do Pesquisar, abrirá brechas para abrir o arquivo errado.
 
