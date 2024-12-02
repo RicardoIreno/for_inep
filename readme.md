@@ -16,8 +16,8 @@ Devido a restrição de rede, o GIT está instalado localmente na VM para contro
 ### Sobre este documento
 
 Este documento:
-- está em formato Markdown. Saiba como utilizar este formato consultando <docs/markdown.md>
-- usa a ferramenta Git. O <docs/git.md> será o arquivo de refências rápidas sobre o uso do Git.
+- está em formato Markdown. Saiba como utilizar este formato consultando [docs/markdown.md](docs/markdown.md)
+- usa a ferramenta Git. O [docs/git.md](docs/git.md) será o arquivo de refências rápidas sobre o uso do Git.
 
 
 
