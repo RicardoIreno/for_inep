@@ -118,9 +118,10 @@ Para fluxo de trabalho, sugiro as seguintes regras:
 ### Para colaboradores do projeto
 1. Sempre fazer o `git pull` apenas do *branch* `dev`.
 2. Sempre criar uma ramificação (*branch*) para trabalhar.
-<<<<<<< HEAD
 3. Enviar (`git push origin nome-da-branch`) apenas a ramificações.
 
+
+Não é necessário fazer continuamente o `git pull` se o seu trabalho não depende de atualizações ou trabalho de outros. Mas, se você em parceria com um colaborador especifico, vocês podem fazer um fluxo de trabalho paralelo entre ambos.
 
 #### Fluxos paralelos
 
@@ -134,7 +135,7 @@ O push, nestes casos, será:
 ```
 git push repo-fulano nome-do-branch
 ```
-O colaboador verifica o recebimento da ramificação usando `git brach`.
+O colaboador verifica o recebimento da ramificação usando `git brach`, e a partir da ramificação recebida, continua o seut trabalho. O último a atualizar é quem envia para o repositório principal.
 
 
 #### Nomeclatura das ramificações
