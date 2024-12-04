@@ -118,14 +118,25 @@ Para fluxo de trabalho, sugiro as seguintes regras:
 ### Para colaboradores do projeto
 1. Sempre fazer o `git pull` apenas do *branch* `dev`.
 2. Sempre criar uma ramificação (*branch*) para trabalhar.
-3. Enviar (`git push`) apenas a ramificações.
+<<<<<<< HEAD
+3. Enviar (`git push origin nome-da-branch`) apenas a ramificações.
 
 
+#### Fluxos paralelos
+>>>>>>> 1204a
 Quando dois ou mais colaboradores estão trabalhando em um mesmo recurso precisam compartilhá-lo e precisam de agilidade, eles podem trocar ramificações diretamente entre si, adicionando o caminho diretamente para o repositório do colega.
 
 ```
 git remote add repo-fulano P:\...
 ```
+
+O push, nestes casos, será:
+```
+git push repo-fulano nome-do-branch
+```
+O colaboador verifica o recebimento da ramificação usando `git brach`.
+
+
 #### Nomeclatura das ramificações
 
 **Sugestão de nomeclatura para trabalho contínuo nos mesmos arquivos**
