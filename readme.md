@@ -42,6 +42,12 @@ git remote add origin P:\_work
 git pull origin dev
 ```
 
+4. entrar no branch dev
+```
+git switch -c dev
+```
+
+
 ## Organização
 
 ### Estrutura de Diretórios
@@ -83,7 +89,7 @@ Exemplos:
 
 > "Altera a função convert_number em extracao_dados_censo_2024_12.py"
 
-> "Renomeia a variável ABC para YZX"
+> "Renomeia a variável ABC para XYZ"
 
 
 O comando completo é:
@@ -105,4 +111,50 @@ Exemplo:
 SELECT * FROM censo_2017 WHERE municipio = 'XXXXX';
   
 ```
+## Fluxo de trabalho
 
+Para fluxo de trabalho, sugiro as seguintes regras:
+
+### Para colaboradores do projeto
+1. Sempre fazer o `git pull` apenas do *branch* `dev`.
+2. Sempre criar uma ramificação (*branch*) para trabalhar.
+3. Enviar (`git push origin nome-da-branch`) apenas a ramificações.
+
+
+#### Fluxos paralelos
+Quando dois ou mais colaboradores estão trabalhando em um mesmo recurso precisam compartilhá-lo e precisam de agilidade, eles podem trocar ramificações diretamente entre si, adicionando o caminho diretamente para o repositório do colega.
+
+```
+git remote add repo-fulano P:\...
+```
+
+O push, nestes casos, será:
+```
+git push repo-fulano nome-do-branch
+```
+O colaboador verifica o recebimento da ramificação usando `git brach`.
+
+
+#### Nomeclatura das ramificações
+
+**Sugestão de nomeclatura para trabalho contínuo nos mesmos arquivos**
+Qunado o colaborador está sempre aprimmorando as mesmas funcionalidades.
+
+> [MM-DD][a~z]-[usuário]
+
+Exemplo: 
+> 1204a-ricardo
+
+**Sugestão de nomeclatura para trabalhos pontuais**
+Quando o trabalho é dividido em pequenas feituras independentes, pequenos arquivos que não precsiam ser revisitados com frequência
+
+> feat-[nome-enxuto-da-funcionalidade]
+
+Exemplo:
+> feat-funcao-extrai_data_nascimento_raiz
+
+
+### Para o gestor do repositório principal
+1. Verificar novas ramificações adicionados usando `git branch`
+2. Incorporar as ramificações ao branch `dev` usando `git merge nome-do-branch`
+3. Apagar as ramificações incorporadas do repostório principal
