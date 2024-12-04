@@ -123,7 +123,7 @@ Para fluxo de trabalho, sugiro as seguintes regras:
 
 
 #### Fluxos paralelos
->>>>>>> 1204a
+
 Quando dois ou mais colaboradores estão trabalhando em um mesmo recurso precisam compartilhá-lo e precisam de agilidade, eles podem trocar ramificações diretamente entre si, adicionando o caminho diretamente para o repositório do colega.
 
 ```
