@@ -131,10 +131,10 @@ git remote add repo-fulano P:\...
 **Sugestão de nomeclatura para trabalho contínuo nos mesmos arquivos**
 Qunado o colaborador está sempre aprimmorando as mesmas funcionalidades.
 
-> feat-[MM-DD][a~z]-[usuário]
+> [MM-DD][a~z]-[usuário]
 
 Exemplo: 
-> feat-1204a-ricardo
+> 1204a-ricardo
 
 **Sugestão de nomeclatura para trabalhos pontuais**
 Quando o trabalho é dividido em pequenas feituras independentes, pequenos arquivos que não precsiam ser revisitados com frequência
