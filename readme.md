@@ -21,51 +21,56 @@ Este documento:
 
 
 
-## Configuração inicial
+## Configuração
 
-O local escolhido para ser o repositório git é o diretório `P:\_work`. O procedimento será cada usuário manter uma pasta, em seu próprio usuário, que busca e envia conteúdo para este diretório. Local sugerido: ***Desktop***. Nome de pasta sugerido: ***work***.
+### Repositório principal
+- Repositório principal: `P:\_work.git`
+- Branch principal: `dev`
 
-### Criando seu repositório
-
-1. iniciar um repositório. Local sugerido: Desktop. Nome da pasta à escolha.
-```
-git init
-```
-
-2. adicionar o caminho para o repositório `P:\_work` como *origin*
-```
-git remote add origin P:\_work
-```
-
-3. puxar o conteúdo do branch **dev**
-```
-git pull origin dev
-```
-
-4. entrar no branch dev
-```
-git switch -c dev
-```
-
-
-## Organização
-
-### Estrutura de Diretórios
-
-Estrutura de diretórios adotado para o projeto
-
+Estrutura:
 
 ```
-/_work/
-    ├── /docs/
-    ├── /scripts_pentaho/      
+/_work.git/
+    ├── /scripts_pentaho/
     ├── /scripts_python/
     ├── /scripts_r/
-    ├── /scripts_sql/                     
-    └── readme.md
+    ├── /scripts_sql/
 ```
 
-Como cada usuário irá criar sua própria cópia do repositório principal, haverão múltiplas cópias dos mesmos arquivos no computador, é assim que deve ser. Por isso, deve-se prestar atenção em trabalhar com os arquivos corretos, ou seja, os que estão na sua pasta work do seu desktop. Procurar arquivos através do Pesquisar, abrirá brechas para abrir o arquivo errado.
+
+### Criação dos repositórios individuais
+
+1. Clique com o botão direito na área Desktop, e escolha o Git Bash.
+2. Dê o comando `git clone P:\_work.git`. Será criada a pasta `_work.git` em seu Desktop.
+3. Puxe o conteúdo do repositório `P:\_work.git` usando o comando `git pull origin dev`
+4. Entre no branch `dev` com o comando `git branch dev`
+
+
+## Rotinas
+
+### Rotina de trabalho
+1. Puxe o conteúdo do repositório `P:\_work.git` usando o comando `git pull origin dev --rebase`. Sempre use a flag `--rebase`
+2. Adicione as suas modificações usando `git add` e `git commit`
+3. Envie para `P:\_work.git` usando `git push origin dev`
+
+> Neste fluxo de trabalho use apenas o branch `dev`
+
+Se o comando for rejeitado, significa que que o repositório principal possui trabalho salvo que você não possui em seu repositório local. Neste caso, antes de enviar, você precisa atualizar o seu repositório com o git pull. Seu trabalho não será perdido, porem, se houver uma atualização paralela no mesmo arquivo que você está tentando atualziar, o git pedirá que você resolva o conflito de versões primeiro.
+
+#### Fluxos paralelos
+
+Quando dois ou mais colaboradores estão trabalhando em um mesmo recurso precisam compartilhá-lo, eles podem trocar ramificações diretamente entre si, adicionando o caminho diretamente para o repositório do colega.
+
+```
+git remote add repo-fulano P:\...
+```
+
+O push, nestes casos, será:
+```
+git push repo-fulano nome-do-branch
+```
+O colaboador verifica o recebimento da ramificação usando `git brach`, e a partir da ramificação recebida, continua o seut trabalho. O último a atualizar é quem envia para o repositório principal.
+
 
 ### Nomeclatura dos arquivos
 
@@ -111,53 +116,6 @@ Exemplo:
 SELECT * FROM censo_2017 WHERE municipio = 'XXXXX';
   
 ```
-## Fluxo de trabalho
-
-Para fluxo de trabalho, sugiro as seguintes regras:
-
-### Para colaboradores do projeto
-1. Sempre fazer o `git pull` apenas do *branch* `dev`.
-2. Sempre criar uma ramificação (*branch*) para trabalhar.
-3. Enviar (`git push origin nome-da-branch`) apenas a ramificações.
 
 
-Não é necessário fazer continuamente o `git pull` se o seu trabalho não depende de atualizações ou trabalho de outros. Mas, se você em parceria com um colaborador especifico, vocês podem fazer um fluxo de trabalho paralelo entre ambos.
 
-#### Fluxos paralelos
-
-Quando dois ou mais colaboradores estão trabalhando em um mesmo recurso precisam compartilhá-lo e precisam de agilidade, eles podem trocar ramificações diretamente entre si, adicionando o caminho diretamente para o repositório do colega.
-
-```
-git remote add repo-fulano P:\...
-```
-
-O push, nestes casos, será:
-```
-git push repo-fulano nome-do-branch
-```
-O colaboador verifica o recebimento da ramificação usando `git brach`, e a partir da ramificação recebida, continua o seut trabalho. O último a atualizar é quem envia para o repositório principal.
-
-
-#### Nomeclatura das ramificações
-
-**Sugestão de nomeclatura para trabalho contínuo nos mesmos arquivos**
-Qunado o colaborador está sempre aprimmorando as mesmas funcionalidades.
-
-> [MM-DD][a~z]-[usuário]
-
-Exemplo: 
-> 1204a-ricardo
-
-**Sugestão de nomeclatura para trabalhos pontuais**
-Quando o trabalho é dividido em pequenas feituras independentes, pequenos arquivos que não precsiam ser revisitados com frequência
-
-> feat-[nome-enxuto-da-funcionalidade]
-
-Exemplo:
-> feat-funcao-extrai_data_nascimento_raiz
-
-
-### Para o gestor do repositório principal
-1. Verificar novas ramificações adicionados usando `git branch`
-2. Incorporar as ramificações ao branch `dev` usando `git merge nome-do-branch`
-3. Apagar as ramificações incorporadas do repostório principal
